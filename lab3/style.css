@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Neue Machina', sans-serif;
+    background: #17161E;
+    color: #fff;
+}
+
+.header {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 16px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(227, 254, 15, 0.2);
+}
+
+.logo-container {
+    margin-right: 65px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-img.img {
+    height: 28px;
+    cursor: pointer;
+}
+
+.logo-text.span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.nav-links {
+    font-size: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link.a {
+    text-decoration: none;
+    color: #838383;
+    position: relative;
+}
+
+.dapp-button.button {
+    background-color: transparent;
+    color: #E3FE0F;
+    border: 1px solid #E3FE0F;
+    border-radius: 15px;
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: 500;
+    padding: 22px 77px 24px 79px;
+    cursor: pointer;
+}
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 30px 40px;
+    border-radius: 20px;
+    background: #1f1e27;
+    color: #fff;
+    box-shadow: 0 0 25px rgba(227, 254, 15, 0.25);
+    width: 350px;
+    max-width: 90%;
+    animation: fadeIn 0.25s ease;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#registerForm h2 {
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: 600;
+    color: #E3FE0F;
+}
+
+label {
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #2a2933;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:user-valid {
+    border-color: #8aff44;
+}
+
+input:user-invalid:not(:focus) {
+    border-color: #ff5a5a;
+}
+
+input:focus {
+    border-color: #E3FE0F;
+    box-shadow: 0 0 8px rgba(227, 254, 15, 0.3);
+}
+
+.error {
+    min-height: 1em;
+    color: #ff5a5a;
+    font-size: 13px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#registerForm button {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #E3FE0F;
+    background: transparent;
+    color: #E3FE0F;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: 'Neue Machina', sans-serif;
+}
+
+#registerForm button:hover {
+    background: rgba(227, 254, 15, 0.1);
+}
+
+#showPasswordBtn,
+#closeModalBtn {
+    border-color: #888;
+    color: #ccc;
+}
+
+#showPasswordBtn:hover,
+#closeModalBtn:hover {
+    background: rgba(255, 255, 255, 0.05);
+}

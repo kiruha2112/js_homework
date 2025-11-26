@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Валидация</h1>
+  <div class="container">
+    <header class="header">
+      <nav class="nav">
+        <div class="logo-container"></div>
+
+        <ul class="nav-links ul">
+          <li class="nav-link-item li"><a href="#" class="nav-link a">Menu</a></li>
+          <li class="nav-link-item li"><a href="#" class="nav-link a">Socials</a></li>
+          <li class="nav-link-item li"><a href="#" class="nav-link a">Docs</a></li>
+          <li class="nav-link-item li"><a href="#" class="nav-link a">Buy</a></li>
+        </ul>
+      </nav>
+
+      <button id="registerBtn" class="button">Регистрация</button>
+      <button class="dapp-button button">dApp</button>
+    </header>
+  </div>
+
+  <dialog id="registerModal">
+    <form id="registerForm" novalidate>
+      <h2>Регистрация</h2>
+
+      <label for="name">Имя (обязательное)</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        aria-describedby="nameError"
+        aria-live="polite"
+      />
+      <div id="nameError" class="error" hidden></div>
+
+      <label for="email">Email (обязательное)</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        aria-describedby="emailError"
+        aria-live="polite"
+      />
+      <div id="emailError" class="error" hidden></div>
+
+      <label for="password">Пароль (мин. 6 символов)</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="6"
+        aria-describedby="passwordError"
+        aria-live="polite"
+      />
+      <div id="passwordError" class="error" hidden></div>
+
+      <div class="buttons">
+        <button type="submit">Отправить</button>
+        <button type="button" id="showPasswordBtn">Показать пароль</button>
+        <button type="button" id="closeModalBtn">Закрыть</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="lab3.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Promise</h1>
+  <section id="resolve">
+    <h2>Resolve</h2>
+    <p>Нажмите кнопку — вызывается <code>job()</code>, который возвращает Promise, разрешающийся через 2 секунды со строкой "работа сделана".</p>
+    <button id="jobBtn" class="btn">Запустить job()</button>
+    <div id="jobOutput" class="output" aria-live="polite"></div>
+    </section>
+    
+    
+    <section id="getdata">
+    <h2>Случайные данные и ошибки — getData</h2>
+    <p>Собираем фабрику данных. Введите вероятность ошибки, строку данных и число-аргумент для вызова возвращаемой функции.</p>
+    <label>Вероятность ошибки (0..1): <input id="prob" type="number" step="0.01" min="0" max="1" value="0.5"></label>
+    <br>
+    <label>Строка данных: <input id="dataStr" type="text" value="пример"></label>
+    <br>
+    <label>Число (аргумент): <input id="numArg" type="text" value="42"></label>
+    <br>
+    <button id="getDataBtn" class="btn">Вызвать getData</button>
+    <div id="getDataOutput" class="output"></div>
+    </section>
+    
+    
+    <section id="crafting">
+    <h2>Крафт</h2>
+    <p>Нажимайте кнопки для создания предметов. Зависимости создаются автоматически при необходимости.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <div>
+    <button class="btn craftBtn" data-item="wood">Создать дерево</button>
+    <div>Время: 1000ms</div>
+    </div>
+    <div>
+    <button class="btn craftBtn" data-item="stick">Создать палку</button>
+    <div>Время: 1200ms (требует дерево)</div>
+    </div>
+    <div>
+    <button class="btn craftBtn" data-item="iron_ore">Добыть железную руду</button>
+    <div>Время: 1500ms</div>
+    </div>
+    <div>
+    <button class="btn craftBtn" data-item="iron_ingot">Плавить слиток</button>
+    <div>Время: 2000ms (требует iron_ore)</div>
+    </div>
+    <div>
+    <button class="btn craftBtn" data-item="pickaxe">Создать кирку</button>
+    <div>Время: 2500ms (требует stick + iron_ingot)</div>
+    </div>
+    </div>
+    
+    
+    <h3 style="margin-top:12px">Инвентарь</h3>
+    <div id="inventory" class="inventory" aria-live="polite"></div>
+    
+    
+    <h3>Логи прогресса</h3>
+    <div id="craftLog" class="log"></div>
+    </section>
+    <script src="lab4.js"></script>
+</body>
+</html>
