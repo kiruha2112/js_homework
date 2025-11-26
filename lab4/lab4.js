@@ -1,7 +1,6 @@
 (function () {
     'use strict';
 
-    // ---------- Utility & Data ----------
     var inventory = { wood: 0, stick: 0, iron_ore: 0, iron_ingot: 0, pickaxe: 0 };
 
     var items = {
@@ -36,7 +35,6 @@
         });
     }
 
-    // ---------- Resolve: job() ----------
     function job() {
         return new Promise(function (resolve) {
             setTimeout(function () {
@@ -45,7 +43,6 @@
         });
     }
 
-    // ---------- getData factory ----------
     function getData(errorProbability, baseStr) {
         var local = 'Синтетические данные: ' + String(baseStr);
         return function (num) {
@@ -61,7 +58,6 @@
         };
     }
 
-    // ---------- Craft ----------
     function craftOne(itemKey) {
         return new Promise(function (resolve) {
             var def = items[itemKey];
@@ -117,7 +113,6 @@
         return craftOne(itemKey);
     }
 
-    // ---------- DOM ----------
     document.addEventListener('DOMContentLoaded', function () {
         logEl = document.getElementById('craftLog');
         invEl = document.getElementById('inventory');
@@ -125,7 +120,6 @@
         updateInventoryUI();
         log('Система крафта готова');
 
-        // Resolve
         var jobBtn = document.getElementById('jobBtn');
         var jobOutput = document.getElementById('jobOutput');
 
@@ -136,7 +130,6 @@
             });
         });
 
-        // getData
         var getDataBtn = document.getElementById('getDataBtn');
         var getDataOutput = document.getElementById('getDataOutput');
 
@@ -155,7 +148,6 @@
                 : 'Результат: ' + result;
         });
 
-        // Craft buttons
         document.querySelectorAll('.craftBtn').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 var item = btn.dataset.item;
