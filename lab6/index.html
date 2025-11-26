@@ -7,5 +7,74 @@
 </head>
 <body>
   <h1>Classes</h1>
+  <section id="version-section">
+    <h2>Версионирование</h2>
+    <div class="controls">
+      <input id="version-input" placeholder="Введите начальную версию (например 1.2.4)" aria-label="Стартовая версия" />
+      <button id="version-create">Создать версию</button>
+    </div>
+    <div id="version-controls" style="display:none; margin-top:8px;">
+      <div class="controls">
+        <button id="v-major">major()</button>
+        <button id="v-minor">minor()</button>
+        <button id="v-patch">patch()</button>
+        <button id="v-rollback">rollback()</button>
+        <button id="v-release">release()</button>
+      </div>
+      <div class="output" id="version-output" aria-live="polite"></div>
+    </div>
+  </section>
+    
+    
+    <section id="rect-section">
+    <h2>Прямоугольник и квадрат</h2>
+    <div class="controls">
+    <input id="rect-w" type="number" placeholder="Ширина" aria-label="Ширина" />
+    <input id="rect-h" type="number" placeholder="Высота" aria-label="Высота" />
+    <button id="rect-calc-area">Площадь</button>
+    <button id="rect-calc-perim">Периметр</button>
+    </div>
+    <div class="output" id="rect-output" aria-live="polite"></div>
+    </section>
+    
+    
+    <section id="temp-section">
+    <h2>Температура</h2>
+    <div class="controls">
+    <div>
+    <input id="t1" type="number" step="any" placeholder="Темп. 1 (°C)" aria-label="Температура 1 в цельсиях" />
+    <div class="small">Отображение: <label><input type="radio" name="unit1" value="C" checked />°C</label> <label><input type="radio" name="unit1" value="K" />K</label> <label><input type="radio" name="unit1" value="F" />°F</label></div>
+    <div class="output" id="t1-display"></div>
+    </div>
+    
+    
+    <div>
+    <input id="t2" type="number" step="any" placeholder="Темп. 2 (°C)" aria-label="Температура 2 в цельсиях" />
+    <div class="small">Отображение: <label><input type="radio" name="unit2" value="C" checked />°C</label> <label><input type="radio" name="unit2" value="K" />K</label> <label><input type="radio" name="unit2" value="F" />°F</label></div>
+    <div class="output" id="t2-display"></div>
+    </div>
+    </div>
+    <div class="controls" style="margin-top:8px">
+    <button id="t-add">Сложить</button>
+    <button id="t-sub">Вычесть (t1 - t2)</button>
+    </div>
+    <div class="output" id="t-result" aria-live="polite"></div>
+    </section>
+    
+    
+    <section id="rps-section">
+    <h2>Камень-ножницы-бумага (SSE)</h2>
+    <div class="controls">
+    <button id="rps-start">Следить за играми</button>
+    <button id="rps-stop" disabled>Остановить</button>
+    </div>
+    <div class="stats">
+    <div class="stat">Победы игрока 1: <span id="p1-wins">0</span></div>
+    <div class="stat">Победы игрока 2: <span id="p2-wins">0</span></div>
+    <div class="stat">Раундов: <span id="round-count">0</span></div>
+    </div>
+    <div class="output" id="rps-history" style="max-height:240px;overflow:auto" aria-live="polite"></div>
+    </section>
+    <script src="lab6.js" defer></script>
 </body>
 </html>
