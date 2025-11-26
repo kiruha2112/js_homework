@@ -4,8 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('lab5-theme') || 'dark';
+        document.documentElement.classList.add(t === 'light' ? 'theme-light' : 'theme-dark');
+      } catch (e) {
+        document.documentElement.classList.add('theme-dark');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Fetch</h1>
+  <header class="hdr">
+    <h1 class="title">Lab5</h1>
+    <button id="themeBtn" class="btn" aria-pressed="false">Тема</button>
+  </header>
+
+  <main>
+    <!-- Toast container -->
+    <div id="toasts" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Gallery section -->
+    <section id="gallerySection" class="section" aria-labelledby="gTitle">
+      <div class="section-head">
+        <h2 id="gTitle">Галерея</h2>
+        <button id="reload" class="btn">Обновить</button>
+      </div>
+
+      <div id="gLoader" class="loader" hidden aria-hidden="true">Загрузка...</div>
+      <div id="gEmpty" class="empty" hidden>Изображения не найдены</div>
+      <div id="gallery" class="grid" role="list"></div>
+    </section>
+
+    <!-- Temperature section -->
+    <section id="tempSection" class="section" aria-labelledby="tTitle">
+      <h2 id="tTitle">Отправка температуры</h2>
+
+      <form id="tempForm" novalidate>
+        <label>
+          Номер аудитории (обязательное)
+          <input id="room" name="room" required aria-describedby="roomErr" />
+        </label>
+        <div id="roomErr" class="err" hidden aria-live="polite"></div>
+
+        <label>
+          Температура (°C) (обязательное)
+          <input id="temperature" name="temperature" type="number" required step="0.1" aria-describedby="tempErr" />
+        </label>
+        <div id="tempErr" class="err" hidden aria-live="polite"></div>
+
+        <button type="submit" id="send" class="btn">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="lab5.js"></script>
 </body>
 </html>
